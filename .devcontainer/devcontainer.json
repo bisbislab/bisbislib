@@ -1,0 +1,73 @@
+{
+    "name": "bisbislib",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "python",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "python.pythonPath": "/usr/local/bin/python",
+                "python.linting.pylintEnabled": false,
+                "python.linting.mypyEnabled": true,
+                "python.linting.mypyArgs": [
+                    "--strict",
+                    "--allow-untyped-calls",
+                    "--allow-subclassing-any",
+                    "--warn-unused-ignores=false",
+                    "--ignore-missing-imports"
+                ],
+                "python.linting.flake8Enabled": true,
+                "python.linting.flake8Args": [
+                    "--max-line-length=79",
+                    "--ignore=W503",
+                    "--unused-arguments-ignore-abstract-functions",
+                    "--unused-arguments-ignore-stub-functions"
+                ],
+                "python.linting.pydocstyleEnabled": true,
+                "python.linting.pydocstyleArgs": [
+                    "--ignore=D213,D400,D415",
+                    "--convention=google"
+                ],
+                "python.linting.lintOnSave": true,
+                "python.formatting.provider": "black",
+                "python.formatting.blackArgs": [
+                    "--line-length=79"
+                ],
+                "python.analysis.typeCheckingMode": "basic",
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter"
+                },
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": true
+                },
+                "editor.rulers": [
+                    79
+                ],
+                "files.insertFinalNewline": true,
+                "files.trimFinalNewlines": true,
+                "files.eol": "\n",
+                "files.trimTrailingWhitespace": true,
+                "[markdown]": {
+                    "files.trimTrailingWhitespace": false
+                },
+                "files.exclude": {
+                    "**/__pycache__": true,
+                    ".mypy_cache": true
+                }
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.flake8",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "njpwerner.autodocstring",
+                "donjayamanne.githistory",
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}

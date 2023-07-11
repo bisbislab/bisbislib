@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  python:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        - USERNAME=${USERNAME}
+        - USER_UID=${USER_UID}
+        - USER_GID=${USER_GID}
+    volumes:
+      - ../:/workspace
+      - /home/data/rawdata/01_医療系:/home/data/rawdata/01_医療系:ro
+    tty: true
